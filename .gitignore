@@ -1,1 +1,5 @@
+# Python related files
 __pycache__/
+
+# Excel related files
+Data/.~lock.*
