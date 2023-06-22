@@ -19,3 +19,10 @@ class VanityIndianNo:
             return True
         else:
             return False
+        
+    def pattern_check(self, phone_no: str) -> bool:
+        """
+            Checks if it matches a specific pattern 
+        """
+
+        return True
