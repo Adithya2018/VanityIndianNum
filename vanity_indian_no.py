@@ -1,19 +1,15 @@
+from typing import Tuple
 import pandas as pd
 import numpy as np
-import openpyxl
+import re
 
 class VanityIndianNo:
     """
         Vanity Numbers for Indian Mobile Numbers
     """
 
-    phone_no = '0000000000'
-    vanity_check_df = pd.DataFrame()
-
     def __init__(self):
         self.phone_no = '0000000000'
-        self.vanity_check_df = openpyxl.load_workbook("Data/Vanity_Check_bsnl_cost.xlsx")
-
     
     def __init__(self, phone_no):
         self.phone_no = phone_no
@@ -29,9 +25,16 @@ class VanityIndianNo:
         else:
             return False
         
-    def pattern_check(self, phone_no: str) -> bool:
+    def pattern_check(self, phone_no: str) -> Tuple[str, int]:
         """
-            Checks if it matches a specific pattern 
+            Checks if phone no matches a specific pattern
+            and returns the level and rate of the vanity phone number
+            :param phone_no: str, Phone number to pattern check
+            :returns: level and rate of phone number
         """
+        level = 'Normal'
+        rate = 0
 
-        return True
+
+
+        return level, rate
