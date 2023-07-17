@@ -1,13 +1,19 @@
 import pandas as pd
 import numpy as np
+import openpyxl
 
 class VanityIndianNo:
     """
-
+        Vanity Numbers for Indian Mobile Numbers
     """
+
+    phone_no = '0000000000'
+    vanity_check_df = pd.DataFrame()
 
     def __init__(self):
         self.phone_no = '0000000000'
+        self.vanity_check_df = openpyxl.load_workbook("Data/Vanity_Check_bsnl_cost.xlsx")
+
     
     def __init__(self, phone_no):
         self.phone_no = phone_no
