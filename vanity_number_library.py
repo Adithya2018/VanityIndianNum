@@ -14,10 +14,9 @@ if __name__ == '__main__':
     
     for input_phone_no in input_phone_nos_df['External_id']:
 
-        vn = VanityIndianNo(str(input_phone_no))
+        vn = VanityIndianNo(str(input_phone_no), vanity_check_level_cost_df)
 
-        if vn.is_valid_no(vn.phone_no):
-            level, rate = vn.pattern_check(vn.phone_no)
-            print(level, rate)
+        if vn.is_valid_no():
+            level, rate = vn.pattern_check()
         else:
             print("Enter a valid Number")
