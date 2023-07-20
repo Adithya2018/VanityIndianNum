@@ -4,6 +4,7 @@ venv/
 
 # IDE related Files
 .vscode/
+.idea/
 
 # Excel related files
 Data/.~lock.*
