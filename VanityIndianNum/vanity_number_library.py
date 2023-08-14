@@ -1,6 +1,3 @@
-import re
-
-import openpyxl as opxl
 import pandas as pd
 
 from vanity_indian_no import VanityIndianNo
@@ -17,7 +14,7 @@ if __name__ == '__main__':
 
         vn = VanityIndianNo(str(input_phone_no), vanity_check_level_cost_df)
 
-        if vn.is_valid_no():
+        if vn.is_valid_no(vn.phone_no):
             level, rate = vn.pattern_check()
         else:
             print("Enter a valid Number")

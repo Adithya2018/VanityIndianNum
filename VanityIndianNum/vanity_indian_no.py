@@ -12,12 +12,13 @@ class VanityIndianNo:
         self.phone_no = phone_no
         self.vanity_check_level_cost_df = vanity_check_level_cost_df
 
-    def is_valid_no(self) -> bool:
+    @staticmethod
+    def is_valid_no(phone_no) -> bool:
         """
-            checks if no is valid
+            checks if number is valid
             :returns: boolean, based on valid or invalid
         """
-        if len(self.phone_no) == 10:
+        if len(phone_no) == 10:
             return True
         else:
             return False
