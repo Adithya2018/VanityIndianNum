@@ -1,6 +1,7 @@
 # Python related files
 __pycache__/
 venv/
+/tests/.pytest_cache/
 
 # IDE related Files
 .vscode/
