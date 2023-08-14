@@ -3,11 +3,12 @@ import pandas as pd
 import numpy as np
 import re
 
+
 class VanityIndianNo:
     """
         Vanity Numbers for Indian Mobile Numbers
     """
-    
+
     def __init__(self, phone_no, vanity_check_level_cost_df):
         self.level = 'Normal'
         self.rate = 0
@@ -23,7 +24,7 @@ class VanityIndianNo:
             return True
         else:
             return False
-        
+
     def pattern_check(self) -> Tuple[str, int]:
         """
             Checks if phone no matches a specific pattern
@@ -31,7 +32,5 @@ class VanityIndianNo:
             :returns: level and rate of phone number
         """
         print(self.vanity_check_level_cost_df)
-
-
 
         return self.level, self.rate
