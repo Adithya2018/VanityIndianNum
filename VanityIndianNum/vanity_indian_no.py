@@ -1,5 +1,7 @@
 from typing import Tuple
 
+import numpy as np
+
 
 class VanityIndianNo:
     """
@@ -29,6 +31,11 @@ class VanityIndianNo:
             and returns the level and rate of the vanity phone number
             :returns: level and rate of phone number
         """
-        print(self.vanity_check_level_cost_df)
+
+        for check in self.vanity_check_level_cost_df['Function Name']:
+            if check is not np.NAN:
+                print(check)
+            else:
+                continue
 
         return self.level, self.rate
