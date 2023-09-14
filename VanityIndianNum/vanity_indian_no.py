@@ -1,6 +1,7 @@
 from typing import Tuple
 
 import numpy as np
+from  data_cleaning import clean_vanity_rule_book
 
 
 class VanityIndianNo:
@@ -24,6 +25,16 @@ class VanityIndianNo:
             return True
         else:
             return False
+        
+    @staticmethod
+    def last_n_digits_identical(is_odd: bool):
+        """
+
+        :param is_odd:
+        :return:
+        """
+
+        pass
 
     def pattern_check(self) -> Tuple[str, int]:
         """
@@ -32,10 +43,18 @@ class VanityIndianNo:
             :returns: level and rate of phone number
         """
 
-        for check in self.vanity_check_level_cost_df['Function Name']:
+        cleaned_df = clean_vanity_rule_book(self.vanity_check_level_cost_df)
+
+        for index, check in enumerate(cleaned_df['Function Name']):
             if check is not np.NAN:
-                print(check)
-            else:
-                continue
+                if check == 'last_n_digits_identical':
+
+                    if cleaned_df['Odd/Even Selection'][index] == 'Odd':
+                        self.last_n_digits_identical(True)
+                    
+                    elif cleaned_df['Odd/Even Selection'][index] == 'Even':
+                        self.last_n_digits_identical(False)
 
         return self.level, self.rate
+
+    

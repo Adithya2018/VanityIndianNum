@@ -17,5 +17,6 @@ if __name__ == '__main__':
         if vn.is_valid_no(vn.phone_no):
             level, rate = vn.pattern_check()
             print(f'Level = {level}; Rate = ₹{rate}')
+            break
         else:
             print("Enter a valid Number")
